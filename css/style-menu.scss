@@ -1,0 +1,78 @@
+$primary: #9356DC;
+$secondary: #FF79DA;
+$terciary: #99E2D0;
+
+.box {
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    -moz-box-sizing: border-box;
+    /* Firefox, autres Gecko */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, autres WebKit */
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .return {
+        font-size: 23px;
+        font-weight: 500;
+        padding: 0 52px 0 20px;
+    }
+}
+
+.restaurant-img {
+    img{
+        width: 100%;
+
+        object-fit: cover;
+    }
+
+}
+.menu-restaurant{
+    background-color: #F6F6F6;
+    border-radius: 40px 40px 0 0;
+    margin-top: -60px;
+    position: relative;
+
+    &__title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        .heart{
+            font-size: 30px;
+            font-weight: lighter;
+        }
+    
+        h1{
+            font-family: shrikhand;
+        }
+    }
+}
