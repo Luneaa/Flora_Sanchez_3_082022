@@ -47,11 +47,26 @@ header .return {
      object-fit: cover;
 }
 
+.menu-restaurant__category h3 {
+  padding-left: 19px;
+  font-weight: 400;
+}
+.menu-restaurant__category h3::after {
+  content: "";
+  display: block;
+  width: 12%;
+  padding-top: 3px;
+  border-bottom: 3px solid #99E2D0;
+}
+
 .menu-restaurant {
   background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
   margin-top: -60px;
   position: relative;
+}
+.menu-restaurant__category {
+  padding-bottom: 30px;
 }
 .menu-restaurant__title {
   display: flex;
@@ -66,4 +81,35 @@ header .return {
 }
 .menu-restaurant__title h1 {
   font-family: shrikhand;
+}
+.menu-restaurant__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 20px 0 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  background-color: white;
+  cursor: pointer;
+  padding-left: 10px;
+  box-shadow: 0 0 10px #D4D4D4;
+  line-height: 10px;
+  margin: 15px 13px;
+}
+.menu-restaurant__item__label {
+  padding: 5px 0 5px 0;
+  margin: 10px 0 0 0;
+}
+.menu-restaurant__item__label p {
+  font-weight: 300;
+  font-size: 15px;
+}
+.menu-restaurant__item__label h4, .menu-restaurant__item__label p {
+  padding-bottom: 10px;
+}
+.menu-restaurant__item__price {
+  align-self: flex-end;
+  padding: 5px 0 18px 0;
+  margin: 10px 0 0 0;
+  font-weight: bold;
 }/*# sourceMappingURL=style-menu.css.map */
