@@ -43,11 +43,16 @@ a {
   padding: 18px 50px 18px 50px;
 }
 
+.primary-button:hover, .primary-button--order:hover {
+  background: linear-gradient(to bottom right, #fda4e4, #ae85e0);
+  box-shadow: 5px 7px 8px #D4D4D4;
+}
+
 .cover {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  max-height: 200px;
+  max-height: 300px;
   border-radius: 15px 15px 0 0;
 }
 
@@ -96,20 +101,32 @@ a {
   padding: 50px 20px 30px 20px;
 }
 
+.how-to__function {
+  position: relative;
+}
 .how-to__table {
   padding-bottom: 50px;
 }
 .how-to__item {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   margin-bottom: 20px;
   border-radius: 20px;
   border-style: none;
   background-color: #F6F6F6;
   padding: 20px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px #D4D4D4;
+  margin: 20px 30px 20px 30px;
+  box-shadow: 2px 5px 10px #D4D4D4;
+}
+.how-to__item:hover {
+  background-color: #eadff7;
+}
+.how-to__item:hover i {
+  color: #9356DC;
+}
+.how-to i {
+  padding: 0 30px 0 25px;
+  color: #747474;
 }
 .how-to p {
   width: 25px;
@@ -122,11 +139,24 @@ a {
   font-weight: 400;
   color: white;
   padding-top: 2px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .restaurant {
   background-color: #F6F6F6;
   padding-bottom: 60px;
+}
+.restaurant__card__new {
+  position: absolute;
+  top: 20px;
+  left: 445px;
+  background-color: #99E2D0;
+  color: #1b6150;
+  font-weight: bold;
+  padding: 5px 13px;
+  border-radius: 4px;
 }
 .restaurant__card {
   width: 92%;
