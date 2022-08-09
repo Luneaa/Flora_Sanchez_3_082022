@@ -33,7 +33,57 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.primary-button{
+.loading{
+    width: 100%;
+    height: 100%;
+z-index: 2;
+    position: absolute;
+    position: fixed;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba($color: white, $alpha: 0.9);
+    animation: loading 4s forwards;
+    .letter{
+        color: $terciary;
+        font-size: 80px;
+        animation: flash 1.2s linear infinite;
+        font-family: shrikhand;
+    }
+    @keyframes flash {
+        0%{
+            color: $secondary;
+            text-shadow: 0 0 7px $primary;
+        }
+        90%{
+            color: $terciary;
+            text-shadow: none;
+        }
+        100%{
+            color: $secondary;
+            text-shadow: 0 0 7px $primary;
+        }
+    }
+    @keyframes loading {
+        0%{
+            visibility: visible;
+        }
+        100%{
+            visibility: hidden;
+        }
+        
+    }
+    .letter:nth-child(1){animation-delay: 0.1s;}
+    .letter:nth-child(2){animation-delay: 0.2s;}
+    .letter:nth-child(3){animation-delay: 0.3s;}
+    .letter:nth-child(4){animation-delay: 0.4s;}
+    .letter:nth-child(5){animation-delay: 0.5s;}
+    .letter:nth-child(6){animation-delay: 0.6s;}
+    .letter:nth-child(7){animation-delay: 0.7s;}
+    .letter:nth-child(8){animation-delay: 0.8s;}
+}
+
+.primary-button {
     padding: 18px;
     border-radius: 50px;
     border-style: none;
@@ -41,14 +91,17 @@ a {
     font-weight: 400;
     color: white;
     background: linear-gradient(to bottom right, $secondary, $primary);
-    &--order{
+    transition: .3s ease;
+
+    &--order {
         @extend .primary-button;
         padding: 18px 50px 18px 50px;
     }
 }
-.primary-button:hover{
+
+.primary-button:hover {
     background: linear-gradient(to bottom right, #fda4e4, #ae85e0);
-    box-shadow: 5px 7px 8px #D4D4D4;
+    box-shadow: 3px 7px 3px #D4D4D4;
 
 }
 
@@ -62,8 +115,8 @@ a {
 
 .header__logo {
     text-align: center;
-    margin: 20px 0 15px 0;
-    padding-left: 20px;
+    padding: 20px 0 15px 20px;
+
 }
 
 .localisation {
@@ -101,25 +154,28 @@ a {
         margin: 0 0 20px 0;
         font-size: 20px;
         color: #747474;
-        font-weight:300;
+        font-weight: 300;
     }
-    
+
 }
-.section-title{
+
+.section-title {
     padding: 50px 20px 30px 20px;
 }
 
 .how-to {
-    &__function{
+    &__function {
         position: relative;
     }
-&__table{
-    padding-bottom: 50px;
-}
+
+    &__table {
+        padding-bottom: 50px;
+    }
+
     &__item {
         display: flex;
         align-items: center;
-
+        font-size: 14px;
         margin-bottom: 20px;
         border-radius: 20px;
         border-style: none;
@@ -128,18 +184,21 @@ a {
         margin: 20px 30px 20px 30px;
         box-shadow: 2px 5px 10px #D4D4D4;
     }
-    &__item:hover{
+
+    &__item:hover {
         background-color: #eadff7;
-        i{
+
+        i {
             color: $primary;
         }
     }
-    i{
+
+    i {
         padding: 0 30px 0 25px;
         color: #747474;
     }
 
-    p{
+    p {
         width: 25px;
         height: 25px;
         border-radius: 50%;
@@ -159,11 +218,12 @@ a {
 .restaurant {
     background-color: #F6F6F6;
     padding-bottom: 60px;
-    &__card__new{
+
+    &__card__new {
         position: absolute;
         top: 20px;
-        left: 445px;
-        background-color: #99E2D0;
+        right: 20px;
+        background-color: $terciary;
         color: #1b6150;
         font-weight: bold;
         padding: 5px 13px;
@@ -182,14 +242,16 @@ a {
         position: relative;
     }
 }
-.restaurant__card__description{
+
+.restaurant__card__description {
     display: flex;
     justify-content: space-between;
     padding: 5px 20px 0 20px;
     line-height: 1.5;
-    .heart{
-align-self: center;
-font-size: 30px;
+
+    .heart {
+        align-self: center;
+        font-size: 30px;
 
     }
 }
@@ -206,20 +268,25 @@ font-size: 30px;
         font-size: 20px;
         padding: 20px;
     }
-    &--icon{
+
+    &--icon {
         display: flex;
         flex-direction: row;
     }
-    &--deal{
+
+    &--deal {
         font-size: 12px;
     }
-    &__link{
+
+    &__link {
         padding-left: 10px;
     }
-    &__list{
+
+    &__list {
         padding: 0 20px 0 20px;
     }
-    li{
+
+    li {
         padding: 5px;
     }
 }
