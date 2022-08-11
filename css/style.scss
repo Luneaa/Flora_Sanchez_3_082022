@@ -73,14 +73,11 @@ z-index: 2;
         }
         
     }
-    .letter:nth-child(1){animation-delay: 0.1s;}
-    .letter:nth-child(2){animation-delay: 0.2s;}
-    .letter:nth-child(3){animation-delay: 0.3s;}
-    .letter:nth-child(4){animation-delay: 0.4s;}
-    .letter:nth-child(5){animation-delay: 0.5s;}
-    .letter:nth-child(6){animation-delay: 0.6s;}
-    .letter:nth-child(7){animation-delay: 0.7s;}
-    .letter:nth-child(8){animation-delay: 0.8s;}
+    @for $i from 1 through 8 {
+        .letter:nth-child(#{$i}){
+            animation-delay: 0.1s*$i;
+        }
+    }
 }
 
 .primary-button {
@@ -240,6 +237,31 @@ z-index: 2;
         background-color: white;
         box-shadow: 0 0 10px #D4D4D4;
         position: relative;
+        .heart {
+            align-self: center;
+            font-size: 30px;
+        }
+        .heart--empty{
+            position: absolute;
+            right: 20px;
+            bottom: 19px;
+        }
+        .heart--full{
+            position: absolute;
+            right: 20px;
+            bottom: 19px;
+            background: linear-gradient(to top, $secondary, $primary);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(0);
+            transition: 0.4s ease-out;
+            pointer-events: none;
+
+        
+        }
+        .heart--empty:hover + .heart--full {
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -249,11 +271,7 @@ z-index: 2;
     padding: 5px 20px 0 20px;
     line-height: 1.5;
 
-    .heart {
-        align-self: center;
-        font-size: 30px;
 
-    }
 }
 
 .footer {

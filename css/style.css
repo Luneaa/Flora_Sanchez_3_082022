@@ -266,16 +266,36 @@ a {
   box-shadow: 0 0 10px #D4D4D4;
   position: relative;
 }
+.restaurant__card .heart {
+  align-self: center;
+  font-size: 30px;
+}
+.restaurant__card .heart--empty {
+  position: absolute;
+  right: 20px;
+  bottom: 19px;
+}
+.restaurant__card .heart--full {
+  position: absolute;
+  right: 20px;
+  bottom: 19px;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  transition: 0.4s ease-out;
+  pointer-events: none;
+}
+.restaurant__card .heart--empty:hover + .heart--full {
+  transform: scale(1.1);
+}
 
 .restaurant__card__description {
   display: flex;
   justify-content: space-between;
   padding: 5px 20px 0 20px;
   line-height: 1.5;
-}
-.restaurant__card__description .heart {
-  align-self: center;
-  font-size: 30px;
 }
 
 .footer {

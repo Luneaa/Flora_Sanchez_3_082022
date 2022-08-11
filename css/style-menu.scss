@@ -96,9 +96,30 @@ header {
         padding: 0 25px 0 20px;
 
         .heart {
-            font-size: 28px;
-            font-weight: lighter;
+            align-self: center;
+            font-size: 30px;
         }
+        .heart--empty{
+            position: absolute;
+            right: 40px;
+            top: 20px;
+        }
+        .heart--full{
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            background: linear-gradient(to top, $secondary, $primary);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(0);
+            transition: 0.4s ease-out;
+            pointer-events: none;
+                    
+        }
+        .heart--empty:hover + .heart--full {
+            transform: scale(1.1);
+        }
+        
 
         h1 {
             font-family: shrikhand;
@@ -143,6 +164,24 @@ header {
             margin: 10px 0 0 0;
             font-weight: bold;
         }
+    }
+}
+
+@for $i from 1 through 5{
+    .menu-restaurant__item:nth-child(#{$i}){
+        animation: appear 2s 0.2s*($i - 1) backwards;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(15%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

@@ -83,8 +83,28 @@ header .return {
   padding: 0 25px 0 20px;
 }
 .menu-restaurant__title .heart {
-  font-size: 28px;
-  font-weight: lighter;
+  align-self: center;
+  font-size: 30px;
+}
+.menu-restaurant__title .heart--empty {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+.menu-restaurant__title .heart--full {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  transition: 0.4s ease-out;
+  pointer-events: none;
+}
+.menu-restaurant__title .heart--empty:hover + .heart--full {
+  transform: scale(1.1);
 }
 .menu-restaurant__title h1 {
   font-family: shrikhand;
@@ -125,6 +145,52 @@ header .return {
   font-weight: bold;
 }
 
+.menu-restaurant__item:nth-child(1) {
+  -webkit-animation: appear 2s 0s backwards;
+          animation: appear 2s 0s backwards;
+}
+
+.menu-restaurant__item:nth-child(2) {
+  -webkit-animation: appear 2s 0.2s backwards;
+          animation: appear 2s 0.2s backwards;
+}
+
+.menu-restaurant__item:nth-child(3) {
+  -webkit-animation: appear 2s 0.4s backwards;
+          animation: appear 2s 0.4s backwards;
+}
+
+.menu-restaurant__item:nth-child(4) {
+  -webkit-animation: appear 2s 0.6s backwards;
+          animation: appear 2s 0.6s backwards;
+}
+
+.menu-restaurant__item:nth-child(5) {
+  -webkit-animation: appear 2s 0.8s backwards;
+          animation: appear 2s 0.8s backwards;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .button-order {
   text-align: center;
   padding: 0 0 80px 0;
