@@ -40,8 +40,8 @@ a {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
-  -webkit-animation: loading 4s forwards;
-          animation: loading 4s forwards;
+  -webkit-animation: loading 2s forwards;
+          animation: loading 2s forwards;
 }
 .loading .letter {
   color: #99E2D0;
@@ -207,7 +207,6 @@ a {
 .how-to__item {
   display: flex;
   align-items: center;
-  font-size: 14px;
   margin-bottom: 20px;
   border-radius: 20px;
   border-style: none;
@@ -324,4 +323,39 @@ a {
 }
 .footer li {
   padding: 5px;
+}
+
+@media screen and (min-width: 1025px) {
+  .how-to {
+    display: flex;
+  }
+  .how-to__table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .how-to p {
+    top: 35px;
+  }
+  .how-to__table h2 {
+    display: flex;
+    width: 100%;
+  }
+  .restaurant {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .restaurant h2 {
+    display: flex;
+    width: 100%;
+  }
+  .restaurant__card {
+    margin: 30px;
+    width: 45%;
+  }
 }/*# sourceMappingURL=style.css.map */

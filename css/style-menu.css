@@ -111,9 +111,6 @@ header .return {
   font-size: 28px;
 }
 .menu-restaurant__item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 5px 20px 0 20px;
   border-radius: 20px;
   margin-bottom: 15px;
@@ -123,12 +120,19 @@ header .return {
   box-shadow: 0 0 10px #D4D4D4;
   line-height: 10px;
   margin: 15px 13px;
+  display: flex;
+  transition: 0.5s ease-in-out;
+}
+.menu-restaurant__item__info {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
 }
 .menu-restaurant__item__label {
   padding: 5px 0 5px 0;
-  margin: 10px 0 0 0;
-  text-overflow: ellipsis;
-  flex-wrap: nowrap;
+  margin: 5px 0 0 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu-restaurant__item__label p {
   font-weight: 300;
@@ -137,12 +141,46 @@ header .return {
 .menu-restaurant__item__label h4,
 .menu-restaurant__item__label p {
   padding-bottom: 10px;
+  padding-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-restaurant__item__price {
   align-self: flex-end;
   padding: 5px 0 18px 0;
-  margin: 10px 0 0 0;
+  margin: 10px 10px 0 0;
   font-weight: bold;
+}
+.menu-restaurant__item__check {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  height: auto;
+  width: 0;
+  min-width: 0;
+  margin: -5px -20px 0 10px;
+  background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+}
+.menu-restaurant__item__check i {
+  transform: rotate(360deg);
+  transition: none;
+}
+.menu-restaurant__item:hover > .menu-restaurant__item__check i {
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+.menu-restaurant__item:hover > .menu-restaurant__item__check {
+  transform: scaleX(1);
+  width: 90px;
+  min-width: 90px;
 }
 
 .menu-restaurant__item:nth-child(1) {
@@ -173,7 +211,7 @@ header .return {
 @-webkit-keyframes appear {
   0% {
     opacity: 0;
-    transform: translateY(15%);
+    transform: translateY(20%);
   }
   100% {
     opacity: 1;
@@ -184,7 +222,7 @@ header .return {
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: translateY(15%);
+    transform: translateY(20%);
   }
   100% {
     opacity: 1;
@@ -194,4 +232,15 @@ header .return {
 .button-order {
   text-align: center;
   padding: 0 0 80px 0;
+}
+
+@media screen and (min-width: 1025px) {
+  .menu-restaurant {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .restaurant-img img {
+    height: 600px;
+  }
 }/*# sourceMappingURL=style-menu.css.map */

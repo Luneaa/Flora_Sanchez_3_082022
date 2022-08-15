@@ -99,12 +99,14 @@ header {
             align-self: center;
             font-size: 30px;
         }
-        .heart--empty{
+
+        .heart--empty {
             position: absolute;
             right: 40px;
             top: 20px;
         }
-        .heart--full{
+
+        .heart--full {
             position: absolute;
             right: 40px;
             top: 20px;
@@ -114,12 +116,13 @@ header {
             transform: scale(0);
             transition: 0.4s ease-out;
             pointer-events: none;
-                    
+
         }
-        .heart--empty:hover + .heart--full {
+
+        .heart--empty:hover+.heart--full {
             transform: scale(1.1);
         }
-        
+
 
         h1 {
             font-family: shrikhand;
@@ -128,9 +131,7 @@ header {
     }
 
     &__item {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+
         padding: 5px 20px 0 20px;
         border-radius: 20px;
         margin-bottom: 15px;
@@ -140,12 +141,20 @@ header {
         box-shadow: 0 0 10px #D4D4D4;
         line-height: 10px;
         margin: 15px 13px;
+        display: flex;
+        transition: 0.5s ease-in-out;
+
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+        }
 
         &__label {
             padding: 5px 0 5px 0;
-            margin: 10px 0 0 0;
-            text-overflow: ellipsis;
-            flex-wrap: nowrap;
+            margin: 5px 0 0 0;
+            overflow: hidden;
+            white-space: nowrap;
 
             p {
                 font-weight: 300;
@@ -155,20 +164,62 @@ header {
             h4,
             p {
                 padding-bottom: 10px;
+                padding-top: 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
         &__price {
             align-self: flex-end;
             padding: 5px 0 18px 0;
-            margin: 10px 0 0 0;
+            margin: 10px 10px 0 0;
             font-weight: bold;
         }
+
+        &__check {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            height: auto;
+            width: 0;
+            min-width: 0;
+            margin: -5px -20px 0 10px;
+            background-color: $terciary;
+            border-radius: 0 20px 20px 0;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+            transform: scaleX(0);
+            transform-origin: 100% 50%;
+
+
+            i {
+                transform: rotate(360deg);
+                transition: none;
+            }
+        }
+
+        &:hover>&__check i {
+            transform: rotate(0deg);
+            transition: 0.5s ease-in-out;
+        }
+
+        &:hover>&__check {
+            transform: scaleX(1);
+            width: 90px;
+            min-width: 90px;
+
+
+        }
     }
+
 }
 
-@for $i from 1 through 5{
-    .menu-restaurant__item:nth-child(#{$i}){
+@for $i from 1 through 5 {
+    .menu-restaurant__item:nth-child(#{$i}) {
         animation: appear 2s 0.2s*($i - 1) backwards;
     }
 }
@@ -176,7 +227,7 @@ header {
 @keyframes appear {
     0% {
         opacity: 0;
-        transform: translateY(15%);
+        transform: translateY(20%);
     }
 
     100% {
@@ -188,4 +239,15 @@ header {
 .button-order {
     text-align: center;
     padding: 0 0 80px 0;
+}
+
+@media screen and (min-width: 1025px) {
+    .menu-restaurant{
+        width: 50%;
+margin-left: auto;
+margin-right: auto;
+    }
+    .restaurant-img img{
+        height: 600px;
+    }
 }
