@@ -127,6 +127,7 @@ header .return {
   display: flex;
   justify-content: space-between;
   flex: 1;
+  overflow: hidden;
 }
 .menu-restaurant__item__label {
   padding: 5px 0 5px 0;
