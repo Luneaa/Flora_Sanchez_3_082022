@@ -61,7 +61,7 @@ header .return {
 .menu-restaurant__category h3::after {
   content: "";
   display: block;
-  width: 12%;
+  width: 50px;
   padding-top: 3px;
   border-bottom: 3px solid #99E2D0;
 }
